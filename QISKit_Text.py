@@ -12,11 +12,12 @@ qc.measure(q,c)
 
 r = execute(qc, Aer.get_backend('qasm_simulator'), shots=100).result()
 #量子回路を実行し、結果rに代入する
-print(r.get_counts())
+print("r: {}".format(r.get_counts()))
 #量子回路名cnの量子プログラムの実行結果rからカウント結果を取得し表示する
 rc = r.get_counts()
-print(rc)
-#量子回路名cnの量子プログラム実行によるヒストグラムデータ結果を表示する
+print("rc: {}".format(rc))
+
+#%%量子回路名cnの量子プログラム実行によるヒストグラムデータ結果を表示する
 plot_histogram(rc)
+# %% 量子回路
 circuit_drawer(qc)
-# %%
